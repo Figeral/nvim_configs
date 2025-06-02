@@ -36,4 +36,19 @@ return {
       },
     },
   },
+
+  --type mason configs 
+   {
+  "williamboman/mason-lspconfig.nvim",
+  opts = {
+    ensure_installed = {
+      "tsserver",
+      "eslint",
+      "tailwindcss",
+      "html",
+      "cssls",
+      "jsonls",
+    },
+  },
+}
 }
