@@ -1,10 +1,10 @@
-require("lazy").setup({
-   "lewis6991/gitsigns.nvim",
-   "williamboman/mason.nvim",
+return {
+  "lewis6991/gitsigns.nvim",
+  "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
-   "hrsh7th/nvim-cmp",
+  "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
   "rafamadriz/friendly-snippets",
-})
+}

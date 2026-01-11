@@ -16,12 +16,5 @@ if not pcall(require, "lazy") then
 end
 
 require "lazy_setup"
-require("plugins.none-ls") 
 require "polish"
-require("plugins.neo-tree")
-require("plugins.lsp")
-require("plugins.autosave")
-require("plugins.rust_plugins")
-require("plugins.rust_debugger")
-require("plugins.telescope")
-require("plugins.python")
+

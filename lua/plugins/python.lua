@@ -6,6 +6,7 @@ return {
     opts = {
       servers = {
         pyright = {},
+        ruff = {}, -- Add Ruff for linting/formatting
       },
     },
   },

@@ -11,44 +11,14 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        -- add more arguments for adding more language servers
+        "tsserver",
+        "eslint",
+        "tailwindcss",
+        "html",
+        "cssls",
+        "jsonls",
+        "ruff", -- Added for Python linting/formatting
       },
     },
   },
-  -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
-  {
-    "jay-babu/mason-null-ls.nvim",
-    -- overrides `require("mason-null-ls").setup(...)`
-    opts = {
-      ensure_installed = {
-        "stylua",
-        -- add more arguments for adding more null-ls sources
-      },
-    },
-  },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
-    opts = {
-      ensure_installed = {
-        "python",
-        -- add more arguments for adding more debuggers
-      },
-    },
-  },
-
-  --type mason configs 
-   {
-  "williamboman/mason-lspconfig.nvim",
-  opts = {
-    ensure_installed = {
-      "tsserver",
-      "eslint",
-      "tailwindcss",
-      "html",
-      "cssls",
-      "jsonls",
-    },
-  },
-}
 }
