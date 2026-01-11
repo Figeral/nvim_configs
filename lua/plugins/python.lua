@@ -1,17 +1,16 @@
 return {
   -- 1. Python LSP (Existing)
   -- Provides "Hover" documentation (press 'K' on a symbol)
+  -- 1. Python LSP (Refactored to use astrolsp)
+  -- Provides "Hover" documentation (press 'K' on a symbol)
   {
-    "neovim/nvim-lspconfig",
+    "AstroNvim/astrolsp",
     opts = {
-      servers = {
-        pyright = {},
-        ruff = {}, -- Add Ruff for linting/formatting
-      },
+      servers = { "pyright", "ruff" },
     },
   },
 
-  -- 2. Python Debugger (Existing)
+  -- 2. Python Debugger
   {
     "mfussenegger/nvim-dap",
     dependencies = {
@@ -19,8 +18,9 @@ return {
       "rcarriga/nvim-dap-ui",
     },
     config = function()
-      -- Ensure you have debugpy installed (e.g., via Mason or pip)
-      require("dap-python").setup("python") 
+      -- Use the Mason installed debugpy
+      local path = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
     end,
   },
 
