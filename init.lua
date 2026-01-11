@@ -16,7 +16,7 @@ if not pcall(require, "lazy") then
 end
 
 require "lazy_setup"
-require "none-ls"
+require("plugins.none-ls") 
 require "polish"
 require("plugins.neo-tree")
 require("plugins.lsp")
