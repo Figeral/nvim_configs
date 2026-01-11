@@ -23,6 +23,7 @@ return {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
+          "python", -- Enable formatting for Python
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -92,6 +93,31 @@ return {
           cond = function(client)
             return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
           end,
+        },
+        -- Rust-like parity mappings
+        K = {
+          function() vim.lsp.buf.hover() end,
+          desc = "Hover symbol details",
+        },
+        gd = {
+          function() vim.lsp.buf.definition() end,
+          desc = "Go to definition",
+        },
+        gi = {
+          function() vim.lsp.buf.implementation() end,
+          desc = "Go to implementation",
+        },
+        gr = {
+          function() vim.lsp.buf.references() end,
+          desc = "References of current symbol",
+        },
+        ["[d"] = {
+           function() vim.diagnostic.goto_prev() end,
+           desc = "Previous diagnostic",
+        },
+        ["]d"] = {
+           function() vim.diagnostic.goto_next() end,
+           desc = "Next diagnostic",
         },
       },
     },
