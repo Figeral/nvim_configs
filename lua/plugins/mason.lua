@@ -1,4 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize Mason plugins
 
@@ -18,6 +17,7 @@ return {
         "cssls",
         "jsonls",
         "ruff", -- Added for Python linting/formatting
+        "pyright", -- Added for Python LSP (docs, completion)
       },
     },
   },
